@@ -6,11 +6,11 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack --mode production"
-
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@graviton/dropdown": "^1.1.5",
         "lit-element": "^3.2.2"
     },
     "devDependencies": {

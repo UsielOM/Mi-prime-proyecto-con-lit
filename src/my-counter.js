@@ -24,10 +24,13 @@ export class MyCounter extends LitElement {
         <feedbacl-element id="feedback"></feedbacl-element>
         `;
     }
+    get feedback() {
+        return this.shadowRoot.getElementById('feedback');
+    }
     incrementar() {
         this.counter++;
         if (this.counter == 5) {
-            this.shadowRoot.getElementById('feedback').open('Has llegado a 5 clics');
+            this.feedback.open('Has llegado a 5 clics');
         }
     }
     decrementar() {
@@ -35,7 +38,7 @@ export class MyCounter extends LitElement {
             this.counter--;
         }
         if (this.counter == 0) {
-            this.shadowRoot.getElementById('feedback').open('Has llegado a 0 clics');
+            this.feedback.open('Has llegado a 0 clics');
         }
 
     }
