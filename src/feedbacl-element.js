@@ -6,6 +6,7 @@ export class FeedbaclElement extends LitElement {
     static get properties() {
         return {
             msg: { type: String },
+            opened: { type: Boolean },
         };
     }
 
@@ -32,10 +33,15 @@ export class FeedbaclElement extends LitElement {
             font-size: 2em;
            }
         </style>
-        <div class="opened">
+        <div class="${this.opened ? 'opened' : ''}">
             ${this.msg}
         </div>
         `;
+    }
+    open(mensaje) {
+        this.msg = mensaje;
+        this.opened = true;
+        setTimeout(() => this.opened = false, 4000)
     }
 }
 customElements.define('feedbacl-element', FeedbaclElement);
