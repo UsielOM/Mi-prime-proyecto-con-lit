@@ -21,14 +21,21 @@ export class MyCounter extends LitElement {
             <button @click="${this.incrementar}">+1</button>
             <button @click="${this.decrementar}">-1</button>
         </div>
+        <feedbacl-element id="feedback"></feedbacl-element>
         `;
     }
     incrementar() {
         this.counter++;
+        if (this.counter == 5) {
+            this.shadowRoot.getElementById('feedback').open('Has llegado a 5 clics');
+        }
     }
     decrementar() {
         if (this.counter > 0) {
             this.counter--;
+        }
+        if (this.counter == 0) {
+            this.shadowRoot.getElementById('feedback').open('Has llegado a 0 clics');
         }
 
     }
