@@ -18,9 +18,12 @@ export class MyCounter extends LitElement {
         return html `
         <div>Llevas ${this.counter} clics!!</div>
         <div>
-            <button >+1</button>
+            <button @click="${this.incrementar}">+1</button>
         </div>
         `;
+    }
+    incrementar() {
+        this.counter++;
     }
 }
 customElements.define('my-counter', MyCounter);
