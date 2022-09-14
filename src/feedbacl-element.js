@@ -32,7 +32,7 @@ export class FeedbaclElement extends LitElement {
             font-size: 2em;
            }
         </style>
-        <div>
+        <div class="opened">
             ${this.msg}
         </div>
         `;
